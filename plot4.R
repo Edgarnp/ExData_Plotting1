@@ -8,18 +8,15 @@ png(filename = 'plot4.png',width = 480, height = 480,units = 'px')
 par(mfrow= c(2,2))
 with(power, {
     #Plot (1,1)
-    plot(x=power$DateTime, y=power$Global_active_power
-         , ylab = "Global Active Power (kilowatts)",xlab =  '',pch = '')
-    lines(x=power$DateTime, y=power$Global_active_power)
+    plot(x=power$DateTime, y=power$Global_active_power, type = 'l'
+         , ylab = "Global Active Power (kilowatts)",xlab =  '')
         
     #Plot (1,2)
-    plot(x=DateTime, y=Voltage, pch = '', ylab = "Voltage" )
-    lines(x=DateTime, y = Voltage)
+    plot(x=DateTime, y=Voltage, pch = '', ylab = "Voltage", type = 'l')
     
     #Plot (2,1)
-    plot(x=power$DateTime, y=power$Sub_metering_1
+    plot(x=power$DateTime, y=power$Sub_metering_1, type = 'l'
          , ylab = "Energy sub metering",xlab =  '',pch = '')
-    lines(x=power$DateTime, y=power$Sub_metering_1)
     lines(x=power$DateTime, y=power$Sub_metering_2, col = 'red')
     lines(x=power$DateTime, y=power$Sub_metering_3, col = 'blue')
     legend("topright"
@@ -27,8 +24,7 @@ with(power, {
            , lty = c(1,1,1), col = c("black","red","blue"), bty = "n")
     
     #Plot (2,2)
-    plot(x=DateTime, y = Global_reactive_power, pch = '')
-    lines(x=DateTime, y = Global_reactive_power)
+    plot(x=DateTime, y = Global_reactive_power, type = 'l')
   
 })
 dev.off()

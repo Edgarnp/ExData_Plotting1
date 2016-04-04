@@ -5,8 +5,8 @@ power$DateTime <- strptime(paste(power$Date, power$Time, sep = " "), form = "%d/
 
 
 png(filename = 'plot3.png',width = 480, height = 480,units = 'px')
-plot(x=power$DateTime, y=power$Sub_metering_1, ylab = "Energy sub metering",xlab =  '',pch = '')
-lines(x=power$DateTime, y=power$Sub_metering_1)
+plot(x=power$DateTime, y=power$Sub_metering_1, type= 'l'
+     , ylab = "Energy sub metering",xlab =  '')
 lines(x=power$DateTime, y=power$Sub_metering_2, col = 'red')
 lines(x=power$DateTime, y=power$Sub_metering_3, col = 'blue')
 legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), lty = c(1,1,1), col = c("black","red","blue"))

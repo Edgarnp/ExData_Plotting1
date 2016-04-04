@@ -5,7 +5,7 @@ power$DateTime <- strptime(paste(power$Date, power$Time, sep = " "), form = "%d/
 
 
 png(filename = 'plot2.png',width = 480, height = 480,units = 'px')
-plot(x=power$DateTime, y=power$Global_active_power, ylab = "Global Active Power (kilowatts)",xlab =  '',pch = '')
-lines(x=power$DateTime, y=power$Global_active_power)
+plot(x=power$DateTime, y=power$Global_active_power, type= 'l'
+     , ylab = "Global Active Power (kilowatts)",xlab =  '')
 dev.off()
 
